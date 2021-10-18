@@ -1,0 +1,15 @@
+.status {
+  width: 10px;
+  height: 10px;
+  background-color: darkred;
+  display: block;
+  margin: 5px 10px 0 0;
+  float: left;
+  border-radius: 50%;
+  &.checked-in {
+    background-color: darkgreen;
+  }
+}
+.children + div > button{
+  margin-bottom: 1.5rem;
+}
