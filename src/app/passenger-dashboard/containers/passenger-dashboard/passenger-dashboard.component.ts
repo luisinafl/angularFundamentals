@@ -18,11 +18,14 @@ import { PassengerDashboardService } from '../../passenger-dashboard.service';
         [detail]="passenger"
         (edit)="handleEdit($event)"
         (remove)="handleRemove($event)"
+
       >
       </passenger-detail>
     </div>
   `,
 })
+
+
 export class PassengerDashboardComponent implements OnInit {
   passengers: any;
 
@@ -31,7 +34,14 @@ export class PassengerDashboardComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.passengers = this.passengerService.getPassengers();
+    // this.passengers = this.passengerService.getPassengers();
+    this.passengerService
+    .getPassengers()
+    .subscribe((data: Passenger[]) => {
+      console.log('Data:' , data);
+      this.passengers = data;
+    }
+    );
   }
   handleEdit(event: Passenger) {
     this.passengers = this.passengers.map((passenger: Passenger) => {

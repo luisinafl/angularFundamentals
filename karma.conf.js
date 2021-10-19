@@ -3,6 +3,8 @@
 
 module.exports = function (config) {
   config.set({
+//  jsonServer: require('json-server'),
+
     basePath: '',
     frameworks: ['jasmine', '@angular-devkit/build-angular'],
     plugins: [
@@ -10,7 +12,8 @@ module.exports = function (config) {
       require('karma-chrome-launcher'),
       require('karma-jasmine-html-reporter'),
       require('karma-coverage'),
-      require('@angular-devkit/build-angular/plugins/karma')
+      require('@angular-devkit/build-angular/plugins/karma'),
+      // require('json-server'),
     ],
     client: {
       jasmine: {
@@ -39,6 +42,9 @@ module.exports = function (config) {
     autoWatch: true,
     browsers: ['Chrome'],
     singleRun: false,
-    restartOnFileChange: true
+    restartOnFileChange: true,
+    // app: ['/api', jsonServer.router('db.json')],
+
+
   });
 };
