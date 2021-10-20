@@ -34,7 +34,6 @@ import { Passenger } from '../../models/passengers.interface';
             : 'Not checked in'
         }}
       </div>
-      <div class="children">Children: {{ detail.children?.length || 0 }}</div>
       <div>
         <button (click)="toggleEdit()">
           {{ editing ? 'Done' : 'Edit' }}
@@ -59,10 +58,10 @@ export class PassengerDetailComponent implements OnChanges, OnInit {
   constructor() {}
 
   ngOnInit() {
-    console.log('init');
+    // console.log('init');
   }
   ngOnChanges(changes) {
-    console.log('change')
+    // console.log('change')
     if (changes.detail) {
       this.detail = Object.assign({}, changes.detail.currentValue);
     }
